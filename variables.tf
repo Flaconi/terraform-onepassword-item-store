@@ -1,8 +1,3 @@
-variable "service_account_token" {
-  description = "service account token for 1password"
-  type        = string
-}
-
 variable "tags" {
   description = "Tags applied to the resources"
   type        = list(string)

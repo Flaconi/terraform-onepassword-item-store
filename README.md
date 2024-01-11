@@ -38,12 +38,6 @@ For requirements regarding module structure: [style-guide-terraform.md](https://
 
 The following input variables are required:
 
-### <a name="input_service_account_token"></a> [service\_account\_token](#input\_service\_account\_token)
-
-Description: service account token for 1password
-
-Type: `string`
-
 ### <a name="input_vault_id"></a> [vault\_id](#input\_vault\_id)
 
 Description: id of the vault where the items are stored
