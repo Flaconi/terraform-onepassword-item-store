@@ -9,5 +9,5 @@ resource "onepassword_item" "items" {
   username = each.value.username
   password = each.value.password
 
-  tags = concat(var.tags, ["Managed by Terraform"])
+  tags = concat(var.tags_all, each.value.tags)
 }

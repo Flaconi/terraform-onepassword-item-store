@@ -1,9 +1,3 @@
-variable "tags" {
-  description = "Tags applied to the resources"
-  type        = list(string)
-  default     = []
-}
-
 variable "vault_id" {
   description = "id of the vault where the items are stored"
   type        = string
@@ -16,6 +10,13 @@ variable "items" {
     name     = string
     username = string
     password = string
+    tags     = optional(list(string), [])
   }))
   default = []
+}
+
+variable "tags_all" {
+  description = "Tags applied to all the resources"
+  type        = list(string)
+  default     = []
 }

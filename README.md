@@ -48,14 +48,6 @@ Type: `string`
 
 The following input variables are optional (have default values):
 
-### <a name="input_tags"></a> [tags](#input\_tags)
-
-Description: Tags applied to the resources
-
-Type: `list(string)`
-
-Default: `[]`
-
 ### <a name="input_items"></a> [items](#input\_items)
 
 Description: A list of dicts with secret information
@@ -68,8 +60,17 @@ list(object({
     name     = string
     username = string
     password = string
+    tags     = optional(list(string), [])
   }))
 ```
+
+Default: `[]`
+
+### <a name="input_tags_all"></a> [tags\_all](#input\_tags\_all)
+
+Description: Tags applied to all the resources
+
+Type: `list(string)`
 
 Default: `[]`
 
