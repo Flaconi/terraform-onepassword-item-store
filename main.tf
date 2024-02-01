@@ -10,5 +10,5 @@ resource "onepassword_item" "this" {
   password = each.value.password
   url      = each.value.url
 
-  tags = concat(var.tags_all, each.value.tags)
+  tags = sort(concat(var.tags_all, each.value.tags))
 }
