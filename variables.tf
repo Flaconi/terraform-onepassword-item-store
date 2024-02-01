@@ -10,6 +10,7 @@ variable "items" {
     name     = string
     username = string
     password = string
+    url      = optional(string)
     tags     = optional(list(string), [])
   }))
   default = []

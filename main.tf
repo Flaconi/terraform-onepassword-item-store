@@ -1,4 +1,4 @@
-resource "onepassword_item" "items" {
+resource "onepassword_item" "this" {
   for_each = { for parameter in var.items : parameter.name => parameter }
   vault    = var.vault_id
 
@@ -8,6 +8,7 @@ resource "onepassword_item" "items" {
 
   username = each.value.username
   password = each.value.password
+  url      = each.value.url
 
   tags = concat(var.tags_all, each.value.tags)
 }
