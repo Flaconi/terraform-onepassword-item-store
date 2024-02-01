@@ -60,6 +60,7 @@ list(object({
     name     = string
     username = string
     password = string
+    url      = optional(string)
     tags     = optional(list(string), [])
   }))
 ```
