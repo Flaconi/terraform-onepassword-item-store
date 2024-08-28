@@ -19,7 +19,7 @@ For requirements regarding module structure: [style-guide-terraform.md](https://
 
 | Name | Version |
 |------|---------|
-| <a name="provider_onepassword"></a> [onepassword](#provider\_onepassword) | >= 1.4.0 |
+| <a name="provider_onepassword"></a> [onepassword](#provider\_onepassword) | >= 2.1.0 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -29,7 +29,7 @@ For requirements regarding module structure: [style-guide-terraform.md](https://
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5 |
-| <a name="requirement_onepassword"></a> [onepassword](#requirement\_onepassword) | >= 1.4.0 |
+| <a name="requirement_onepassword"></a> [onepassword](#requirement\_onepassword) | >= 2.1.0 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
@@ -59,9 +59,14 @@ list(object({
     category = optional(string, "login")
     name     = string
     username = string
-    password = string
+    password = optional(string)
     url      = optional(string)
     tags     = optional(list(string), [])
+    sections = optional(map(list(object({
+      label = string
+      type  = optional(string)
+      value = optional(string)
+    }))), {})
   }))
 ```
 

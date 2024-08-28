@@ -10,5 +10,20 @@ resource "onepassword_item" "this" {
   password = each.value.password
   url      = each.value.url
 
+  dynamic "section" {
+    for_each = each.value.sections
+    content {
+      label = section.key
+      dynamic "field" {
+        for_each = section.value
+        content {
+          label = field.value.label
+          type  = field.value.type
+          value = field.value.value
+        }
+      }
+    }
+  }
+
   tags = sort(concat(var.tags_all, each.value.tags))
 }

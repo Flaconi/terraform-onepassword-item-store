@@ -9,9 +9,14 @@ variable "items" {
     category = optional(string, "login")
     name     = string
     username = string
-    password = string
+    password = optional(string)
     url      = optional(string)
     tags     = optional(list(string), [])
+    sections = optional(map(list(object({
+      label = string
+      type  = optional(string)
+      value = optional(string)
+    }))), {})
   }))
   default = []
 }
