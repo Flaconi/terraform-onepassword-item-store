@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: terraform-onepassword-item-store
+  description: >
+    Allow to store items (password,logins) in 1password
+  annotations:
+    github.com/project-slug: Flaconi/terraform-onepassword-item-store
+  tags:
+    - terraform
+    - onepassword
+
+spec:
+  type: library
+  lifecycle: production
+  owner: group:platform
+  providesApis: []
